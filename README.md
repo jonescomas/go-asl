@@ -55,6 +55,7 @@ Table of Contents
 10.  Future Work
     
 11.  References
+12.  JSON Schema
     
 
 1\. Abstract
@@ -692,3 +693,7 @@ Potential future improvements:
 *   Tooling for converting GO-ASL to model-specific prompts automatically.
     
 *   Multi-model compatibility guidelines.
+
+11\. JSON Schema
+
+[JSON Schema GO-ASL 1.0.0](.\go-asl_1.0.0_schema.json)
