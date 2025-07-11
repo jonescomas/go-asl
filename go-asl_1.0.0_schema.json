@@ -1,0 +1,262 @@
+{
+  "$schema": "http://json-schema.org/draft-07/schema#",
+  "title": "GO-ASL",
+  "type": "object",
+  "required": ["version", "goal"],
+  "properties": {
+    "version": {
+      "type": "string",
+      "description": "Version of the GO-ASL specification. E.g. '1.0.0'"
+    },
+    "goal": {
+      "type": "object",
+      "required": ["name", "description"],
+      "properties": {
+        "name": {
+          "type": "string"
+        },
+        "description": {
+          "type": "string"
+        }
+      }
+    },
+    "constraints": {
+      "type": "object",
+      "properties": {
+        "must_use_technologies": {
+          "type": "array",
+          "items": { "type": "string" }
+        },
+        "must_not_use_technologies": {
+          "type": "array",
+          "items": { "type": "string" }
+        },
+        "deployment_target": {
+          "type": "string"
+        },
+        "scale": {
+          "type": "string",
+          "enum": ["low", "medium", "high"]
+        },
+        "budget": {
+          "type": "string",
+          "enum": ["low", "medium", "high"]
+        },
+        "licensing": {
+          "type": "string",
+          "enum": ["open-source", "proprietary"]
+        }
+      }
+    },
+    "preferences": {
+      "type": "object",
+      "properties": {
+        "preferred_languages": {
+          "type": "array",
+          "items": { "type": "string" }
+        },
+        "preferred_ui_frameworks": {
+          "type": "array",
+          "items": { "type": "string" }
+        },
+        "preferred_database": {
+          "type": "array",
+          "items": { "type": "string" }
+        },
+        "style_tone": {
+          "type": "string",
+          "enum": ["concise", "verbose", "well-commented"]
+        }
+      }
+    },
+    "principles": {
+      "type": "object",
+      "properties": {
+        "architecture_patterns": {
+          "type": "array",
+          "items": { "type": "string" }
+        },
+        "design_principles": {
+          "type": "array",
+          "items": { "type": "string" }
+        },
+        "coding_standards": {
+          "type": "array",
+          "items": { "type": "string" }
+        },
+        "documentation": {
+          "type": "object",
+          "properties": {
+            "style": {
+              "type": "string",
+              "enum": ["brief", "detailed", "none"]
+            }
+          }
+        },
+        "testing_strategy": {
+          "type": "array",
+          "items": { "type": "string" }
+        }
+      }
+    },
+    "non_functional_requirements": {
+      "type": "object",
+      "properties": {
+        "performance": {
+          "type": "object",
+          "properties": {
+            "latency_ms": { "type": "number" },
+            "throughput_rps": { "type": "number" }
+          }
+        },
+        "scalability": {
+          "type": "object",
+          "properties": {
+            "horizontal_scaling": { "type": "boolean" }
+          }
+        },
+        "security": {
+          "type": "object",
+          "properties": {
+            "auth_mechanisms": {
+              "type": "array",
+              "items": { "type": "string" }
+            },
+            "data_encryption": { "type": "string" }
+          }
+        },
+        "compliance": {
+          "type": "array",
+          "items": { "type": "string" }
+        },
+        "maintainability": {
+          "type": "object",
+          "properties": {
+            "max_cyclomatic_complexity": { "type": "number" },
+            "max_file_length": { "type": "number" }
+          }
+        }
+      }
+    },
+    "observability": {
+      "type": "object",
+      "properties": {
+        "logging": {
+          "type": "object",
+          "properties": {
+            "level": {
+              "type": "string",
+              "enum": ["debug", "info", "warn", "error"]
+            },
+            "format": { "type": "string" }
+          }
+        },
+        "metrics": {
+          "type": "object",
+          "properties": {
+            "tool": { "type": "string" }
+          }
+        },
+        "tracing": {
+          "type": "object",
+          "properties": {
+            "enabled": { "type": "boolean" },
+            "tool": { "type": "string" }
+          }
+        }
+      }
+    },
+    "reasoning": {
+      "type": "object",
+      "properties": {
+        "planning_mode": { "type": "boolean" },
+        "explain_design_choices": { "type": "boolean" },
+        "require_user_approval_before_coding": { "type": "boolean" }
+      }
+    },
+    "dependencies": {
+      "type": "object",
+      "properties": {
+        "approved_libraries": {
+          "type": "array",
+          "items": { "type": "string" }
+        },
+        "forbidden_libraries": {
+          "type": "array",
+          "items": { "type": "string" }
+        },
+        "min_version_requirements": {
+          "type": "object",
+          "additionalProperties": {
+            "type": "string"
+          }
+        }
+      }
+    },
+    "code_quality": {
+      "type": "object",
+      "properties": {
+        "test_coverage_minimum": { "type": "number" },
+        "static_analysis": {
+          "type": "object",
+          "properties": {
+            "enabled": { "type": "boolean" },
+            "tools": {
+              "type": "array",
+              "items": { "type": "string" }
+            }
+          }
+        },
+        "enforce_linting": { "type": "boolean" }
+      }
+    },
+    "internationalization": {
+      "type": "object",
+      "properties": {
+        "supported_languages": {
+          "type": "array",
+          "items": { "type": "string" }
+        },
+        "default_language": { "type": "string" }
+      }
+    },
+    "environments": {
+      "type": "object",
+      "patternProperties": {
+        ".*": {
+          "type": "object",
+          "properties": {
+            "logging_level": {
+              "type": "string",
+              "enum": ["debug", "info", "warn", "error"]
+            },
+            "secrets_management": { "type": "string" }
+          }
+        }
+      }
+    },
+    "data_privacy": {
+      "type": "object",
+      "properties": {
+        "pii_handling": {
+          "type": "object",
+          "properties": {
+            "anonymize_data": { "type": "boolean" },
+            "logging_of_pii": { "type": "boolean" }
+          }
+        },
+        "audit_trails": { "type": "boolean" }
+      }
+    },
+    "documentation": {
+      "type": "object",
+      "properties": {
+        "formats": {
+          "type": "array",
+          "items": { "type": "string" }
+        },
+        "include_architecture_diagrams": { "type": "boolean" }
+      }
+    }
+  }
+}
