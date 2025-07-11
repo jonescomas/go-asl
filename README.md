@@ -3,7 +3,10 @@ RFC GO-ASL-0001
 
 **Goal-Oriented Application Specification Language (GO-ASL)**
 
-RFCGO-ASL-0001StatusDraftAuthorOpenAI (concept proposal)Date2025-07-11
+Title: Goal-Oriented Application Specification Language (GO-ASL)
+Status: Draft
+Author: Eric Andre (jonescomas@gmx.de) (concept proposal)
+Date: 2025-07-11
 
 Table of Contents
 -----------------
