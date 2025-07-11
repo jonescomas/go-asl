@@ -1,0 +1,1 @@
+create a go-asl exmaple for a java spring boot 3.4 app that allows for scalbale task execution with db backup cancellation, retries and task monitoring
