@@ -125,7 +125,7 @@ A GO-ASL document is written in YAML and consists of optional and required secti
 
 Top-level format:
 
-Plain textANTLR4BashCC#CSSCoffeeScriptCMakeDartDjangoDockerEJSErlangGitGoGraphQLGroovyHTMLJavaJavaScriptJSONJSXKotlinLaTeXLessLuaMakefileMarkdownMATLABMarkupObjective-CPerlPHPPowerShell.propertiesProtocol BuffersPythonRRubySass (Sass)Sass (Scss)SchemeSQLShellSwiftSVGTSXTypeScriptWebAssemblyYAMLXML`   yamlCopyEditgoal:    ...  constraints:    ...  preferences:    ...  principles:    ...  non_functional_requirements:    ...  observability:    ...  reasoning:    ...  dependencies:    ...  code_quality:    ...  internationalization:    ...  environments:    ...  data_privacy:    ...  documentation:    ...   `
+````yaml   yamlCopyEditgoal:    ...  constraints:    ...  preferences:    ...  principles:    ...  non_functional_requirements:    ...  observability:    ...  reasoning:    ...  dependencies:    ...  code_quality:    ...  internationalization:    ...  environments:    ...  data_privacy:    ...  documentation:    ...   ````
 
 Except for goal, all sections are optional.
 
