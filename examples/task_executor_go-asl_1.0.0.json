@@ -1,0 +1,130 @@
+{
+  "version": "1.0.0",
+  "goal": {
+    "name": "TaskExecutorPro",
+    "description": "A scalable Java Spring Boot 3.4 application for executing background tasks. The system should support task scheduling, monitoring, retries for failed tasks, and allow users to cancel running tasks. All task states should be persisted in a database with regular backups. The system should expose metrics and logs for monitoring purposes."
+  },
+  "constraints": {
+    "must_use_technologies": [
+      "Java",
+      "Spring Boot 3.4"
+    ],
+    "deployment_target": "kubernetes",
+    "scale": "high",
+    "budget": "medium",
+    "licensing": "open-source"
+  },
+  "preferences": {
+    "preferred_database": [
+      "PostgreSQL"
+    ],
+    "style_tone": "well-commented"
+  },
+  "principles": {
+    "architecture_patterns": [
+      "Clean Architecture"
+    ],
+    "design_principles": [
+      "SOLID",
+      "DRY"
+    ],
+    "coding_standards": [
+      "Google Java Style"
+    ],
+    "documentation": {
+      "style": "detailed"
+    },
+    "testing_strategy": [
+      "TDD"
+    ]
+  },
+  "non_functional_requirements": {
+    "performance": {
+      "latency_ms": 100,
+      "throughput_rps": 1000
+    },
+    "scalability": {
+      "horizontal_scaling": true
+    },
+    "security": {
+      "auth_mechanisms": [
+        "OAuth2"
+      ],
+      "data_encryption": "at-rest"
+    },
+    "maintainability": {
+      "max_cyclomatic_complexity": 10
+    }
+  },
+  "observability": {
+    "logging": {
+      "level": "info",
+      "format": "json"
+    },
+    "metrics": {
+      "tool": "Prometheus"
+    },
+    "tracing": {
+      "enabled": true,
+      "tool": "OpenTelemetry"
+    }
+  },
+  "reasoning": {
+    "planning_mode": true,
+    "explain_design_choices": true,
+    "require_user_approval_before_coding": true
+  },
+  "dependencies": {
+    "approved_libraries": [
+      "spring-boot",
+      "spring-data-jpa",
+      "spring-security",
+      "spring-actuator",
+      "spring-retry"
+    ],
+    "forbidden_libraries": [
+      "log4j"
+    ],
+    "min_version_requirements": {
+      "spring-boot": "3.4.0"
+    }
+  },
+  "code_quality": {
+    "test_coverage_minimum": 85,
+    "static_analysis": {
+      "enabled": true,
+      "tools": [
+        "SonarQube"
+      ]
+    },
+    "enforce_linting": true
+  },
+  "internationalization": {
+    "supported_languages": [
+      "en"
+    ]
+  },
+  "environments": {
+    "dev": {
+      "logging_level": "debug"
+    },
+    "prod": {
+      "logging_level": "info",
+      "secrets_management": "vault"
+    }
+  },
+  "data_privacy": {
+    "pii_handling": {
+      "anonymize_data": true,
+      "logging_of_pii": false
+    },
+    "audit_trails": true
+  },
+  "documentation": {
+    "formats": [
+      "markdown",
+      "OpenAPI 3.0"
+    ],
+    "include_architecture_diagrams": true
+  }
+}
